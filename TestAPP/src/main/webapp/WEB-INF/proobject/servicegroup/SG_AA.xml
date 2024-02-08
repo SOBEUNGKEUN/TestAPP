@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sg:servicegroup xmlns:sg="http://www.tmax.co.kr/proobject/servicegroup" applicationName="TestAPP" resourcePackage="com.controller" serviceGroupName="SG_AA">
+  <sg:service-resource resourceName="SamplePC" resourcePackage="com.sample.pc">
+    <sg:service-meta>
+      <sg:service-name>SamplePC_select</sg:service-name>
+      <sg:service-method-name>select</sg:service-method-name>
+      <sg:service-input-type resourceName="SampleInDTO" resourcePackage="com.sample.dto" resourcePath="com/sample/dto"/>
+      <sg:service-output-type resourceName="SampleOutDTO" resourcePackage="com.sample.dto" resourcePath="com/sample/dto"/>
+      <sg:urlMapping restType="POST" url="/TestAPP/SG_AA/SamplePC_select"/>
+      <sg:outbound>false</sg:outbound>
+      <sg:messageTypes>JSON</sg:messageTypes>
+    </sg:service-meta>
+    <sg:exclude-source-generation>false</sg:exclude-source-generation>
+  </sg:service-resource>
+  <sg:call-optimization-disable>false</sg:call-optimization-disable>
+</sg:servicegroup>

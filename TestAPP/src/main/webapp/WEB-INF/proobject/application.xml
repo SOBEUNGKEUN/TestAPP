@@ -1,0 +1,15 @@
+<app:application
+    xmlns:app="http://www.tmax.co.kr/proobject/application">
+  <app:application-name>TestAPP</app:application-name>
+  <app:version>0</app:version>
+  <app:servicegroups>
+    <app:servicegroup-name>SG_AA</app:servicegroup-name>
+  </app:servicegroups>
+  <app:dbio-config>
+    <table-history-merge>NONE</table-history-merge>
+    <page-query-enabled>true</page-query-enabled>
+  </app:dbio-config>
+  <app:cache-config>
+    <cache-provider-config/>
+  </app:cache-config>
+</app:application>

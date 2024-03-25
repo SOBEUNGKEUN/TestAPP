@@ -1,12 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sg:servicegroup xmlns:sg="http://www.tmax.co.kr/proobject/servicegroup" applicationName="TestAPP" resourcePackage="com.controller" serviceGroupName="SG_AA">
-  <sg:service-resource resourceName="SamplePC" resourcePackage="com.sample.pc">
+  <sg:transaction-config>
+    <value>nonXaTransactionManagerTest</value>
+    <isolation-level>ISOLATION_DEFAULT</isolation-level>
+    <propagation-behavior>PROPAGATION_REQUIRED</propagation-behavior>
+    <timeout>-1</timeout>
+    <read-only>false</read-only>
+  </sg:transaction-config>
+  <sg:service-resource resourceName="TestPC" resourcePackage="com.sample.pc">
     <sg:service-meta>
-      <sg:service-name>SamplePC_select</sg:service-name>
+      <sg:service-name>TestPC_select</sg:service-name>
       <sg:service-method-name>select</sg:service-method-name>
-      <sg:service-input-type resourceName="SampleInDTO" resourcePackage="com.sample.dto" resourcePath="com/sample/dto"/>
-      <sg:service-output-type resourceName="SampleOutDTO" resourcePackage="com.sample.dto" resourcePath="com/sample/dto"/>
-      <sg:urlMapping restType="POST" url="/TestAPP/SG_AA/SamplePC_select"/>
+      <sg:service-input-type resourceName="SampleDTO" resourcePackage="com.sample.dto" resourcePath="com/sample/dto"/>
+      <sg:service-output-type resourceName="SampleDTO" resourcePackage="com.sample.dto" resourcePath="com/sample/dto"/>
+      <sg:urlMapping restType="POST" url="/TestAPP/SG_AA/TestPC_select"/>
+      <sg:outbound>false</sg:outbound>
+      <sg:messageTypes>JSON</sg:messageTypes>
+    </sg:service-meta>
+    <sg:service-meta>
+      <sg:service-name>TestPC_logCall</sg:service-name>
+      <sg:service-method-name>logCall</sg:service-method-name>
+      <sg:service-input-type resourceName="SampleDTO" resourcePackage="com.sample.dto" resourcePath="com/sample/dto"/>
+      <sg:service-output-type resourceName="SampleDTO" resourcePackage="com.sample.dto" resourcePath="com/sample/dto"/>
+      <sg:urlMapping restType="POST" url="/TestAPP/SG_AA/TestPC_logCall"/>
+      <sg:outbound>false</sg:outbound>
+      <sg:messageTypes>JSON</sg:messageTypes>
+    </sg:service-meta>
+    <sg:exclude-source-generation>false</sg:exclude-source-generation>
+  </sg:service-resource>
+  <sg:service-resource resourceName="Q01PC" resourcePackage="com.assignment01.q01.pc">
+    <sg:service-meta>
+      <sg:service-name>Q01pc_select</sg:service-name>
+      <sg:service-method-name>select</sg:service-method-name>
+      <sg:service-input-type resourceName="q01InDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:service-output-type resourceName="q01OutDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:urlMapping restType="POST" url="/TestAPP/SG_AA/Q01pc_select"/>
+      <sg:outbound>false</sg:outbound>
+      <sg:messageTypes>JSON</sg:messageTypes>
+    </sg:service-meta>
+    <sg:service-meta>
+      <sg:service-name>Q01pc_insert</sg:service-name>
+      <sg:service-method-name>insert</sg:service-method-name>
+      <sg:service-input-type resourceName="q01InDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:service-output-type resourceName="q01OutDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:urlMapping restType="POST" url="/TestAPP/SG_AA/Q01pc_insert"/>
+      <sg:outbound>false</sg:outbound>
+      <sg:messageTypes>JSON</sg:messageTypes>
+    </sg:service-meta>
+    <sg:service-meta>
+      <sg:service-name>Q01pc_update</sg:service-name>
+      <sg:service-method-name>update</sg:service-method-name>
+      <sg:service-input-type resourceName="q01InDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:service-output-type resourceName="q01OutDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:urlMapping restType="POST" url="/TestAPP/SG_AA/Q01pc_update"/>
+      <sg:outbound>false</sg:outbound>
+      <sg:messageTypes>JSON</sg:messageTypes>
+    </sg:service-meta>
+    <sg:service-meta>
+      <sg:service-name>Q01pc_delete</sg:service-name>
+      <sg:service-method-name>delete</sg:service-method-name>
+      <sg:service-input-type resourceName="q01InDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:service-output-type resourceName="q01OutDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:urlMapping restType="POST" url="/TestAPP/SG_AA/Q01pc_delete"/>
+      <sg:outbound>false</sg:outbound>
+      <sg:messageTypes>JSON</sg:messageTypes>
+    </sg:service-meta>
+    <sg:exclude-source-generation>false</sg:exclude-source-generation>
+  </sg:service-resource>
+  <sg:service-resource resourceName="Q02PC" resourcePackage="com.assignment01.q02.pc">
+    <sg:service-meta>
+      <sg:service-name>Q02PC_select</sg:service-name>
+      <sg:service-method-name>select</sg:service-method-name>
+      <sg:service-input-type resourceName="q01InDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:service-output-type resourceName="q01OutDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:urlMapping restType="POST" url="/TestAPP/SG_AA/Q02PC_select"/>
+      <sg:outbound>false</sg:outbound>
+      <sg:messageTypes>JSON</sg:messageTypes>
+    </sg:service-meta>
+    <sg:exclude-source-generation>false</sg:exclude-source-generation>
+  </sg:service-resource>
+  <sg:service-resource resourceName="Q03PC" resourcePackage="com.assignment01.q03.pc">
+    <sg:service-meta>
+      <sg:service-name>Q03PC_error</sg:service-name>
+      <sg:service-method-name>error</sg:service-method-name>
+      <sg:service-input-type resourceName="q01InDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:service-output-type resourceName="q01OutDTO" resourcePackage="com.assignment01.q01.dto" resourcePath="com/assignment01/q01/dto"/>
+      <sg:urlMapping restType="POST" url="/TestAPP/SG_AA/Q03PC_error"/>
       <sg:outbound>false</sg:outbound>
       <sg:messageTypes>JSON</sg:messageTypes>
     </sg:service-meta>

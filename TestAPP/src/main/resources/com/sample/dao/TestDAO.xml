@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.sample.dao.SampleDAO">
-<select id="select" parameterType="com.sample.dto.SampleInDTO" resultType="com.sample.dto.SampleOutDTO">
+<mapper namespace="com.sample.dao.TestDAO">
+<select id="select" parameterType="com.sample.dto.SampleDTO" resultType="com.sample.dto.SampleDTO">
 SELECT *
   FROM DB2USER.EMP
   WHERE EMPNO =#{empno};
